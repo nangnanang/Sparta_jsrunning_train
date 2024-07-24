@@ -84,6 +84,10 @@ function hole(h) {
     }
     return answer;
 }
+// 문자열 변수선언 후 if문을 이용해서 
+// 2로 나눈 나머지가 0인 경우 answer에 "짝수"를 할당
+// 2로 나눈 나머지가 0이 아닌 경우 answer "홀수"를 할당하여
+// 둘 중 하나가 할당된 변수 answer을 return하는 함수이다. 
 
 console.log(hole(10)); // 결과값 "짝수";
 console.log(hole(7)); // 결과값 "홀수";
@@ -111,6 +115,9 @@ let math = function (a, b, c) {
     }
 }
 
+// b가 문자열을 인자로 받으므로 특정 문자열과 b가 일치하는 경우에
+// 해당하는 연산자를 이용하여 a와 c를 계산하여 return하는 함수를 만들었다.   
+
 math(3, "+", 6); // 결과값 9
 math(11, "-", 6); // 결과값 5
 math(6, "*", 3); // 결과값 18
@@ -133,6 +140,7 @@ scores에 있는 학생들의 점수를 반복문을 통해 3점씩 올리게 �
 
 ```javascript
 let scores = [36, 62, 72, 55, 86, 95, 92, 48, 81];
+// const로는 콘솔(scores)에 이 배열만 출력될 수 있으므로 let으로 변경했다. 
 
 function edit(scores) {
     // 4번 문제의 계산기 함수를 활용한 코드를 작성해주세요.
@@ -142,7 +150,12 @@ function edit(scores) {
     }
     return answer;
 }
+// 빈 배열 answer을 선언하고 for문으로 answer.push를 해주었다.
+// 여기서 math 함수를 재사용 하기 위해 위에서 let 함수명 = 함수 형태로 함수 변수를 선언했다. 
+// math(for문으로 받아온 scores배열값,"+",3)으로 기존 배열에 3을 더한 값을 구해서 push로 빈 배열에 넣기로
+// 이 함수를 통해 변형한 scores 배열을 return answer를 통해 반환하면 scores 배열이 변형된다. 
 
 console.log(scores);
 // 기대값: [39, 65, 75, 58, 89, 98, 95, 51, 84]
+// 로그 찍으면 기대값 출력 완료
 ```
