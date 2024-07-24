@@ -98,13 +98,13 @@ console.log(hole(7)); // 결과값 "홀수";
 let math = function (a, b, c) {
     // 코드를 작성해주세요.
     if(b==="+") {
-        return a+b;
+        return a+c;
     } if else(b==="-") {
-        return a-b;
+        return a-c;
     } if else(b==="*") {
-        return a*b;
+        return a*c;
     } if else(b==="/") {
-        return a/b;
+        return a/c;
     }
 }
 
