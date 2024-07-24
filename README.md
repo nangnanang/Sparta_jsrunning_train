@@ -52,14 +52,17 @@ console.log(!!mySchedule); // < false >
 ```javascript
 const gyeonghye = {
     // 조건을 충족하는 코드 작성
-    name:김경혜,
+    name:"김경혜",
     age:24,
     mbti:"INTP"
 };
+// 객체 선언하고 
+// key:value,의 형태로 객체 작성
 
-console.log(gyeonghye[name]);
-console.log(gyeonghye[age]);
-console.log(gyeonghye[mbti]);
+console.log(gyeonghye.name);
+console.log(gyeonghye.age);
+console.log(gyeonghye.mbti);
+// 객체명.key를 이용해 해당 key에 대응하는 value에 접근하고 콘솔로 출력 
 ```
 
 
@@ -99,11 +102,11 @@ let math = function (a, b, c) {
     // 코드를 작성해주세요.
     if(b==="+") {
         return a+c;
-    } if else(b==="-") {
+    } else if(b==="-") {
         return a-c;
-    } if else(b==="*") {
+    } else if(b==="*") {
         return a*c;
-    } if else(b==="/") {
+    } else if(b==="/") {
         return a/c;
     }
 }
@@ -129,7 +132,7 @@ scores에 있는 학생들의 점수를 반복문을 통해 3점씩 올리게 �
 
 
 ```javascript
-const scores = [36, 62, 72, 55, 86, 95, 92, 48, 81];
+let scores = [36, 62, 72, 55, 86, 95, 92, 48, 81];
 
 function edit(scores) {
     // 4번 문제의 계산기 함수를 활용한 코드를 작성해주세요.
