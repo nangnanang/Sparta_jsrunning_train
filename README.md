@@ -12,21 +12,28 @@
 
 ```javascript
 1. let uninitialized;
-console.log(uninitialized); // 결과값 < 빈칸 >
+console.log(uninitialized); // 결과값 < undefined >
+
+// 변수 선언만 하고 변수를 할당해주지 않았기 때문입니다. 
 
 
-2. < 빈칸 > apple = "사과";
+2. < const > apple = "사과";
 apple = "바나나"; // TypeError: Assignment to constant variable
+//var나 let은 이런 경우 변수명에 다른 변수를 할당할 수 있지만, const는 다른 변수를 할당할 수 없기 때문이다. 
 
 
 3. let lotto = [3, 8, 13, 19, 21, 32];
-console.log(lotto[3]); // 결과값 < 빈칸 >
+console.log(lotto[3]); // 결과값 < 19 >
+//배열의 서순은 0부터 시작하기 때문에 lotto[3]은 배열의 4번째 값을 가리킨다. 
 
 
 4. 
 let mySchedule = "";
-console.log(mySchedule || false); // < 빈칸 >
-console.log(!!mySchedule); // < 빈칸 >
+console.log(mySchedule || false); // < false >
+console.log(!!mySchedule); // < false >
+//첫줄은 (false||false)였기 때문에 false가 나왔고, 
+//두번째줄은 false를 두 번 부정했기 때문에 false가 나온 것이다. 
+
 
 ```
 
@@ -43,13 +50,16 @@ console.log(!!mySchedule); // < 빈칸 >
 예시
 
 ```javascript
-const junhyun = {
+const gyeonghye = {
     // 조건을 충족하는 코드 작성
+    name:김경혜,
+    age:24,
+    mbti:"INTP"
 };
 
-console.log(이름이 나오게 콘솔을 실행시켜 주세요.);
-console.log(나이가 나오게 콘솔을 실행시켜 주세요.);
-console.log(MBTI가 나오게 콘솔을 실행시켜 주세요.);
+console.log(gyeonghye[name]);
+console.log(gyeonghye[age]);
+console.log(gyeonghye[mbti]);
 ```
 
 
@@ -61,12 +71,19 @@ console.log(MBTI가 나오게 콘솔을 실행시켜 주세요.);
 예시
 
 ```javascript
-function 함수명(매개변수) {
+function hole(h) {
     // 코드를 작성해 주세요.
+    let answer = "";
+    if(h%2==0){
+        answer = "짝수"
+    } else {
+        answer = "홀수"
+    }
+    return answer;
 }
 
-console.log(함수명(10)); // 결과값 "짝수";
-console.log(함수명(7)); // 결과값 "홀수";
+console.log(hole(10)); // 결과값 "짝수";
+console.log(hole(7)); // 결과값 "홀수";
 ```
 
 
@@ -78,14 +95,23 @@ console.log(함수명(7)); // 결과값 "홀수";
 
 예시
 ```javascript
-function 함수명(매개변수1, 매개변수2, 매개변수3) {
+let math = function (a, b, c) {
     // 코드를 작성해주세요.
+    if(b==="+") {
+        return a+b;
+    } if else(b==="-") {
+        return a-b;
+    } if else(b==="*") {
+        return a*b;
+    } if else(b==="/") {
+        return a/b;
+    }
 }
 
-함수명(3, "+", 6); // 결과값 9
-함수명(11, "-", 6); // 결과값 5
-함수명(6, "*", 3); // 결과값 18
-함수명(15, "+", 3); // 결과값 5
+math(3, "+", 6); // 결과값 9
+math(11, "-", 6); // 결과값 5
+math(6, "*", 3); // 결과값 18
+math(15, "/", 3); // 결과값 5
 ```
 
 &nbsp;
@@ -105,8 +131,13 @@ scores에 있는 학생들의 점수를 반복문을 통해 3점씩 올리게 �
 ```javascript
 const scores = [36, 62, 72, 55, 86, 95, 92, 48, 81];
 
-function 함수명(scores) {
+function edit(scores) {
     // 4번 문제의 계산기 함수를 활용한 코드를 작성해주세요.
+    let answer = [];
+    for(let i =0; i<scores.length; i++) {
+        answer.push(math(scores[i],"+",3));
+    }
+    return answer;
 }
 
 console.log(scores);
